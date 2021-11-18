@@ -1,5 +1,7 @@
 # Docker image with node and chrome (great with `puppeteer`)
 
+https://hub.docker.com/repository/docker/itslooklike/node-chrome
+
 ## usage example
 
 ```Dockerfile
