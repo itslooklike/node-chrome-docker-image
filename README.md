@@ -1,26 +1,27 @@
-# Docker image with node and chrome (great with `puppeteer`)
+# Docker image with node, pnpm, chrome (great with `puppeteer`)
 
 https://hub.docker.com/repository/docker/itslooklike/node-chrome
 
 ## usage example
 
 ```Dockerfile
-FROM itslooklike/node-chrome:1.0.1
+FROM itslooklike/node-chrome:1.2.0
 
-COPY package.json yarn.lock ./
-RUN yarn
+COPY pnpm.json pnpm-lock.yaml ./
+RUN pnpm i
 
 COPY . .
 
-CMD [ "yarn", "start" ]
+CMD [ "pnpm", "start" ]
 ```
 
 <details>
   <summary>System info</summary>
 
 ```sh
-docker build -t itslooklike/node-chrome:1.0.1 .
-docker push itslooklike/node-chrome:1.0.1
+# release container
+docker build -t itslooklike/node-chrome:1.2.0 .
+docker push itslooklike/node-chrome:1.2.0
 ```
 
 </details>
